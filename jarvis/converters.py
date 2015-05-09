@@ -13,3 +13,7 @@
 
 def wnv_snowfall_converter(x):
     return [0.001 if _x == 'T' else _x for _x in x]
+
+
+def wnv_precip_converter(x):
+    return [0.0001 if _x == 'T' else _x for _x in x]
