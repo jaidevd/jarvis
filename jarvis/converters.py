@@ -12,8 +12,19 @@
 
 
 def wnv_snowfall_converter(x):
-    return [0.001 if _x == 'T' else _x for _x in x]
+    if x == "T":
+        return 0.001
+    return x
 
 
 def wnv_precip_converter(x):
-    return [0.0001 if _x == 'T' else _x for _x in x]
+    if x == "T":
+        return 0.0001
+    return x
+
+mix_grind_col_translate = lambda x: x.replace("row_productfeatures_", "")
+
+
+def shoes_weight_convert(weight):
+    weight = weight.apply(lambda x: x.split()[0])
+    return weight.astype(int)
